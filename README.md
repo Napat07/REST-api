@@ -1,7 +1,7 @@
-##backend
+## backend
 npm i
 node index.js
 
-##frontend
+## frontend
 npm i 
 npm start
