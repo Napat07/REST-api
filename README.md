@@ -1,7 +1,7 @@
 ## backend
-npm i
-node index.js
+1. `npm i`
+2. `node index.js`
 
 ## frontend
-npm i 
-npm start
+1. `npm i` 
+2. `npm start`
