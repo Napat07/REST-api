@@ -10,8 +10,8 @@ app.use('/api', bodyParser.json(), router);   //[use json]
 app.use('/api', bodyParser.urlencoded({ extended: false }), router);
 
 let bears = [
-    { 'id': 0, 'name': 'pooh', 'weight': 211 },
-    { 'id': 1, 'name': 'vinnie', 'weight': 111 }
+    { 'id': 5835512007, 'name': 'Napat', 'surname': 'Binsaard', 'Major': 'CoE', 'GPA': 3.99 },
+    { 'id': 5835512009, 'name': 'Prayut', 'surname': 'Janocha', 'Major': 'CoE', 'GPA': 3.50 }
 ];
 
 router.route('/bears')
@@ -21,7 +21,9 @@ router.route('/bears')
             let bear = {}
             bear.id = bears[bears.length-1].id+1
             bear.name = req.body.name
-            bear.weight = req.body.weight
+            bear.surname = req.body.surname
+            bear.Major = req.body.Major
+            bear.GPA = req.body.GPA
             bears.push(bear)            
             res.json( {message: 'Bear created!'} )
         })
@@ -36,8 +38,11 @@ router.route('/bears/:bear_id')
         .put ( (req,res) => {                               // Update a bear
             let id = req.params.bear_id
             let index = bears.findIndex( bear => (bear.id === +id) )
+            bears[index].id = req.body.id;   
             bears[index].name = req.body.name;   
-            bears[index].weight = req.body.weight;   
+            bears[index].surname = req.body.surname; 
+            bears[index].Major = req.body.Major;   
+            bears[index].GPA = req.body.GPA;   
             res.json({ message: 'Bear updated!' + req.params.bear_id});
         })
      

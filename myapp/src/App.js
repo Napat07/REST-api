@@ -3,9 +3,11 @@ import Bear from './components/Bear'
 
 const App = () => {
   return (
-    <div>
+    <body class = "bg" >
+    <div >
         <Bear />
     </div>
+    </body>
   );
 }
 
