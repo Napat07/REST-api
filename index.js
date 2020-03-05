@@ -31,7 +31,7 @@ router.route('/bears')
 router.route('/bears/:bear_id')
         .get((req,res) => {
             let id = req.params.bear_id
-            let index = bears.findIndex( bear => (bear.id === +id) )
+            let index = bears.findIndex( bear => (bear.id==+id) )
             res.json(bears[index])
         })
 

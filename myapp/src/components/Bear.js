@@ -71,9 +71,9 @@ const Bear = () => {
             return bears.map((bear, index) => {
                 return (
                     <li key={index}>
-                        {bear.id} : {bear.name} : {bear.surname} : {bear.Major} : {bear.GPA} &nbsp;
+                        {bear.id} : {bear.name} {bear.surname} : {bear.Major} : {bear.GPA} &nbsp;
                         <button class="btn btn-primary" onClick={() => getBear(bear.id)}>Get</button> &nbsp;
-                        <button class="btn btn-danger" onClick={() => deleteBear(bear.id)}> Del </button> &nbsp;
+                        <button class="btn btn-danger" onClick={() => deleteBear(bear.id)}> Delete </button> &nbsp;
                         <button class="btn btn-warning" onClick={() => updateBear(bear.id)}> Update </button> &nbsp;
                         <tr></tr>
                     </li>
@@ -85,21 +85,23 @@ const Bear = () => {
     }
     return (
         <div>
-            <h2>Get Students</h2>
+            <h2 class="p-3 mb-2 bg-success text-white">Get Students</h2>
                 {printBears()}
-             <h1>  ------------------------------------------------------------- </h1>
-            Students : {id},{name} , {surname} , {Major}, {GPA}
-            <h1>  ------------------------------------------------------------- </h1>
-
-            <h2>Add Students</h2>
-            ID : <input type="text" name="id" onChange={(e) => setId(e.target.value)} /><br />
-            Name : <input type="text" name="name" onChange={(e) => setName(e.target.value)}/> <br />
-            Surname : <input type="text" name="surname" onChange={(e) => setsurName(e.target.value)} /><br />
-            Major : <input type="text" name="Major" onChange={(e) => setMajor(e.target.value)} /><br />
-            GPA : <input type="number" name="GPA" onChange={(e) => setGPA(e.target.value)} /><br />
-
+                <br/>
+                <h6 class="p-3 mb-2 bg-danger text-white"></h6>
+            ID Student : {id} <br />
+            Name : {name}&nbsp; {surname}<br />
+            Major : {Major}<br />
+            GPA :  {GPA}<br />
+            <br/>
+            <h2 class="p-3 mb-2 bg-info text-white">Add Students</h2>
+            ID : <input type="text"  name="id" onChange={(e) => setId(e.target.value)}/> <br />
+            Name : <input type="text"  name="name" onChange={(e) => setName(e.target.value)}/> <br />
+            Surname : <input type="text"  name="surname" onChange={(e) => setsurName(e.target.value)} /><br />
+            Major : <input type="text"  name="Major" onChange={(e) => setMajor(e.target.value)} /><br />
+            GPA : <input type="number"  name="GPA" onChange={(e) => setGPA(e.target.value)} /> <br/>
             <button class="btn btn-success" onClick={addBear}>Add </button>
-            <h1>  ------------------------------------------------------------- </h1>
+            <br/><br/>
 
         </div>
     )
